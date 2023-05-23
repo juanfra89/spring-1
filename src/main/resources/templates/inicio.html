@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Inicio - Egg News</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+  <h1>Últimas noticias</h1>
+  <div class="row">
+    <!-- Tarjetas de noticias -->
+    <div class="col-md-4" th:each="noticia : ${noticias}">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title" th:text="${noticia.titulo}"></h5>
+          <a th:href="@{/noticia/{id}(id=${noticia.id})}" class="btn btn-primary">Leer más</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
